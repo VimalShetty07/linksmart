@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Linksmart</title>
+</head>
+<body>
+    <div class="main">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Salary</th>
+                    <th>Department</th>
+                    <th>Manager</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for employee in employees %}
+                <tr>
+                <td>{{ employee.name}}</td>
+                <td>{{ employee.email}}</td>
+                <td>{{employee.salary}}</td>
+                <td>{{employee.department.name}}</td>
+                <td>{{employee.manage.name}}</td>
+                {% endfor %}
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for department in department %}
+                <tr>
+                <td>{{ department.name}}</td>
+                {% endfor %}
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for manager in manager %}
+                <tr>
+                <td>{{ manager.name}}</td>
+                <td>{{ manager.email}}</td>
+                {% endfor %}
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+</html>
