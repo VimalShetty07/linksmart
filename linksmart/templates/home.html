@@ -1,17 +1,46 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../static/admin/css/index.css">
     <title>Linksmart</title>
+    <style>
+        .main {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border: 2px solid black;
+            margin-bottom: 40px;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+    </style>
 </head>
 <body>
     <div class="main">
-        <table>
+    <h2>Employee Details</h2>
+        <table >
             <thead>
                 <tr>
-                    <th>Nameii</th>
+                    <th>Name</th>
                     <th>Email</th>
                     <th>Salary</th>
                     <th>Department</th>
@@ -25,12 +54,13 @@
                 <td>{{ employee.email}}</td>
                 <td>{{employee.salary}}</td>
                 <td>{{employee.department.name}}</td>
-                <td>{{employee.manage.name}}</td>
+                <td>{{employee.manager.name}}</td>
                 {% endfor %}
                 </tr>
             </tbody>
         </table>
-        <table>
+        <h2>Department Details</h2>
+        <table >
             <thead>
                 <tr>
                     <th>Name</th>
@@ -44,6 +74,7 @@
                 </tr>
             </tbody>
         </table>
+        <h2>Manager Details</h2>
         <table>
             <thead>
                 <tr>
