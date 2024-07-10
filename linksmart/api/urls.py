@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import EmployeeListView,ManagerListView,DepartmentListView,EmployeeAddView,DepartmentAddView,ManagerAddView
+from .views import EmployeeListView,ManagerListView,DepartmentListView,EmployeeAddView,DepartmentAddView,ManagerAddView,PhotoUploadView
 
 
 urlpatterns = [
@@ -9,4 +9,5 @@ urlpatterns = [
     path('add/department/', DepartmentAddView.as_view(),name="department-add-view"),
     path('add/manager/', ManagerAddView.as_view(),name="manager-add-view"),
     path('add/employee/', EmployeeAddView.as_view(),name="employee-add-view"),
+    path('photo/upload', PhotoUploadView.as_view(),name="employee-add-view"),
 ]
